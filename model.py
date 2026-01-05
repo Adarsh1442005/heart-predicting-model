@@ -67,28 +67,28 @@ dt2= DecisionTreeClassifier(max_depth=2)
 dt2.fit(x_train,y_train)
 print(dt2.score(x_test,y_test))
 # connection with the database
-host="localhost"
-username="username"
-password="password"
+# host="localhost"
+# username="username"
+# password="password"
 
-conn=mysql.connector.connect(host,username,password)
+# conn=mysql.connector.connect(host,username,password)
 # creating instance of cursor class to executr sql queries
-connect= conn.cursor()
+# connect= conn.cursor()
 # creating Database with name
-connect.execute("use databasename")
-connect.execute("select age from tablename ")
-row= connect.fetchall()
-age=row
-connect.execute("select * from gender")
-sex=connect.fetchall()
-connect.execute("select * from bp")
-blood_pressure=connect.fetchall()
-connect.execute("select * from chol")
-serum_cholestrol=connect.fetchall()
-connect.execute("select * from restcg")
-restcg=connect.fetchall()
-connect.execute("select * from exang")
-exang=connect.fetchall()
+# connect.execute("use databasename")
+# connect.execute("select age from tablename ")
+# row= connect.fetchall()
+age=24
+# connect.execute("select * from gender")
+sex=1
+# connect.execute("select * from bp")
+blood_pressure=56
+# connect.execute("select * from chol")
+serum_cholestrol=23
+# connect.execute("select * from restcg")
+restcg=24
+# connect.execute("select * from exang")
+exang=23
 if(dt.predict([[age,sex,blood_pressure,serum_cholestrol,restcg,exang]])==0):
    print("patient is out of danger")
 else:
